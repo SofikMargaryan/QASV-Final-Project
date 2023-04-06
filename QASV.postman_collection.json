@@ -1,0 +1,156 @@
+{
+	"info": {
+		"_postman_id": "1ae71a27-1113-4cd6-8863-73f55c1572c4",
+		"name": "QASV",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26411637"
+	},
+	"item": [
+		{
+			"name": "Add address",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"address\": {\r\n        \"fullName\": {\r\n            \"firstName\": \"Adam\",\r\n            \"lastName\": \"Smit\"\r\n        },\r\n        \"company\": \"ABC\",\r\n        \"taxInfo\": {\r\n            \"id\": null,\r\n            \"type\": null\r\n        },\r\n        \"addressLine1\": \"Glendale\",\r\n        \"addressLine2\": \"2/3/232\",\r\n        \"street\": {\r\n            \"name\": null,\r\n            \"number\": null\r\n        },\r\n        \"city\": \"New York\",\r\n        \"country\": \"USA\",\r\n        \"subdivision\": null,\r\n        \"zipCode\": \"111111\",\r\n        \"phoneNumber\": \"5588585855\",\r\n        \"location\": null\r\n    },\r\n    \"setAsDefault\": false\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://addresses.wixapps.net/_api/addresses-web/v1/addresses",
+					"protocol": "https",
+					"host": [
+						"addresses",
+						"wixapps",
+						"net"
+					],
+					"path": [
+						"_api",
+						"addresses-web",
+						"v1",
+						"addresses"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://addresses.wixapps.net/_api/addresses-web/v1/addresses/00bdeccf-5623-467b-be32-ae5e21ae64bf",
+					"protocol": "https",
+					"host": [
+						"addresses",
+						"wixapps",
+						"net"
+					],
+					"path": [
+						"_api",
+						"addresses-web",
+						"v1",
+						"addresses",
+						"00bdeccf-5623-467b-be32-ae5e21ae64bf"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Change",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"address\": {\r\n        \"id\": \"a52f91ba-23bd-4fea-9bca-99b53685a0fa\",\r\n        \"fullName\": {\r\n            \"firstName\": \"Adam\",\r\n            \"lastName\": \"Smit\"\r\n        },\r\n        \"company\": \"ABC////\",\r\n        \"taxInfo\": {\r\n            \"id\": null,\r\n            \"type\": null\r\n        },\r\n        \"addressLine1\": \"Glendale\",\r\n        \"addressLine2\": \"2/3/232\",\r\n        \"street\": {\r\n            \"name\": null,\r\n            \"number\": null\r\n        },\r\n        \"city\": \"New York\",\r\n        \"country\": \"USA\",\r\n        \"subdivision\": null,\r\n        \"zipCode\": \"111111\",\r\n        \"phoneNumber\": \"5588585855\",\r\n        \"location\": null\r\n    },\r\n    \"setAsDefault\": false,\r\n    \"fieldMask\": {\r\n        \"paths\": [\r\n            \"fullName.firstName\",\r\n            \"fullName.lastName\",\r\n            \"company\",\r\n            \"addressLine1\",\r\n            \"addressLine2\",\r\n            \"city\",\r\n            \"country\",\r\n            \"zipCode\",\r\n            \"phoneNumber\",\r\n            \"setAsDefault\"\r\n        ]\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "addresses.wixapps.net/_api/addresses-web/v1/addresses/00bdeccf-5623-467b-be32-ae5e21ae64bf",
+					"host": [
+						"addresses",
+						"wixapps",
+						"net"
+					],
+					"path": [
+						"_api",
+						"addresses-web",
+						"v1",
+						"addresses",
+						"00bdeccf-5623-467b-be32-ae5e21ae64bf"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Remove address",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "addresses.wixapps.net/_api/addresses-web/v1/addresses/00bdeccf-5623-467b-be32-ae5e21ae64bf",
+					"host": [
+						"addresses",
+						"wixapps",
+						"net"
+					],
+					"path": [
+						"_api",
+						"addresses-web",
+						"v1",
+						"addresses",
+						"00bdeccf-5623-467b-be32-ae5e21ae64bf"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": [
+			{
+				"key": "value",
+				"value": "AoOf7Y2E5Gyz8hLnIW2ti95xuqR3AS5OX4pWAa4Ttqo.eyJpbnN0YW5jZUlkIjoiZjQ2Y2Q1MDItZjcyZi00NGY3LTk2MzgtNWRhMWRlYjBiNGU3IiwiYXBwRGVmSWQiOiIxNTA1Yjc3NS1lODg1LWViMWItYjY2NS0xZTQ4NWQ5YmY5MGUiLCJtZXRhU2l0ZUlkIjoiMjhiNzkzZDYtNTQyNC00MDU4LTgwNDktMDI2YTRkYjAyODJmIiwic2lnbkRhdGUiOiIyMDIzLTA0LTA2VDAyOjIxOjEyLjI5OFoiLCJ1aWQiOiI1YWRlZWUxNC1jZTAxLTQyMTQtOTE3Mi00MDJmNjYzNGNkNjYiLCJkZW1vTW9kZSI6ZmFsc2UsImFpZCI6ImZlZTg2MGRkLWU3M2YtNGIxNi04MTdmLTE5ZWRhOTQyZDM2NCIsImJpVG9rZW4iOiJkY2RiNDZkNC1hMzBiLTA0YWYtMTY3MS01ZmNiOTMwMDljYzgiLCJzaXRlT3duZXJJZCI6ImY5MTRmMTFjLWFhYjMtNDUyNy04ZDRlLWJhYjc2MjE0M2E2MCIsImV4cGlyYXRpb25EYXRlIjoiMjAyMy0wNC0wNlQwNjoyMToxMi4yOThaIiwiaGFzVXNlclJvbGUiOmZhbHNlfQ",
+				"type": "string"
+			},
+			{
+				"key": "key",
+				"value": "authorization",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
